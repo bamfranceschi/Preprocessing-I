@@ -31,6 +31,9 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
+	max-width: 1200px;
+	margin: 5%, 10%;
+
 }
 ol, ul {
 	list-style: none;
@@ -53,7 +56,202 @@ table {
     box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display&display=swap');
+
+@main-font: 'Playfair Display', serif;
+@font-color: cornflowerblue;
+@header-height: 6rem;
+@main-margin: 5%;
+
+.section-layout(){
+	border-top: 1px solid lightgrey;
+	padding-top: 4%;
 }
 
+.div-item(){
+	width: 45%;
+	max-width: 100%;
+	padding: 2%;
+	
+	h3{
+		color:@font-color;
+	}
+}
+
+html, body {
+	height: 100%;
+	font-size: 62.5%;
+}
+
+h1{
+	font-size: 6rem;
+
+}
+
+h2{
+	font-size: 4rem;
+	text-align: center;
+}
+
+h3{
+	font-size: 3rem;
+}
+
+h4{
+	font-size: 2.5rem;
+}
+
+p{
+	font-size: 2rem;
+}
+
+i{
+	font-size: 3rem;
+	padding: 2%;
+}
+
+header{
+	height: @header-height;
+	
+	nav{
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		line-height: @header-height;
+
+		a{
+			text-decoration: none;
+			font-size: 2rem;
+			color: @font-color;
+		} //this closes a tag
+
+	}//this closes nav
+
+}//this closes header
+
+.intro{
+
+	.title-card{
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: row;
+		margin: @main-margin;
+		max-width: 100%;
+
+		.name-details{
+			width: 60%;
+			text-align: center;
+			padding: 15% 0%;
+			max-width: 100%;
+			display: flex;
+			flex-direction: column;
+
+			@media(max-width:500px){
+				width: 100%;
+			}
+
+			.name{
+				padding: 4%;
+			}
+
+			.title-location{
+				padding: 4%;
+				line-height: 4.5rem;
+				color: @font-color;
+			}
+
+			.intro-tagline{
+				padding: 4%;
+			}
+
+		}
+
+		.intro-image{
+			width: 40%;
+
+			@media( max-width: 500px ){
+				display: none;
+			}
+		}
+	}
+}
+
+
+.skills{
+	.section-layout();
+	
+	.skill-div{
+		display: flex;
+		justify-content: space-evenly;
+		flex-wrap: wrap;
+		margin: @main-margin;
+
+		@media( max-width: 500px ){
+			flex-direction: column;
+		}
+	
+		.skill-item{
+
+			.div-item();
+
+			@media( max-width: 500px ){
+				width: 100%;
+			}
+
+		}
+	}
+
+}
+
+
+.work{
+	.section-layout();
+	
+	.work-div{
+		display: flex;
+		flex-direction: row;
+		justify-content: space-evenly;
+		flex-wrap: wrap;
+		margin: @main-margin;
+	
+		@media( max-width: 500px ){
+			flex-direction: column;
+		}
+	
+		.work-xp{
+			
+			.div-item();
+	
+			@media( max-width: 500px ){
+				width: 100%;
+			}
+	
+		}
+	}
+
+}
+
+
+.contact{
+	display:flex;
+	justify-content: center;
+	text-align: center;
+
+	.section-layout();
+
+	.contact-info{
+		text-align: center;
+	}
+
+	
+}
+
+footer{
+	display: flex;
+	justify-content: center;
+
+	p{
+	text-align: center;
+	padding: 5%;
+	}
+}
